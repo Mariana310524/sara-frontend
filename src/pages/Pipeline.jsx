@@ -1,61 +1,178 @@
 function Pipeline() {
 
-const procesos = [
-{
-nombre: 'Procesamiento Gmail',
-estado: 'En ejecución',
-progreso: 78
-},
-{
-nombre: 'Extracción de archivos',
-estado: 'Completado',
-progreso: 100
-},
-{
-nombre: 'Validación de documentos',
-estado: 'Pendiente',
-progreso: 35
-}
-];
+  const procesos = [
+    {
+      nombre: "Procesamiento de correos Gmail",
+      estado: "Completado",
+      fecha: "Hoy 10:30 AM",
+      progreso: "100%"
+    },
+    {
+      nombre: "Análisis de documentos",
+      estado: "En proceso",
+      fecha: "Hoy 11:15 AM",
+      progreso: "65%"
+    },
+    {
+      nombre: "Clasificación de archivos",
+      estado: "Pendiente",
+      fecha: "Hoy 12:00 PM",
+      progreso: "0%"
+    }
+  ];
 
-return ( <div className='page-container'>
 
-```
-  <div className='page-header'>
-    <h1>Pipeline</h1>
-    <p>Monitoreo de procesos y automatizaciones de SARA.</p>
-  </div>
+  return (
 
-  <div className='pipeline-list'>
+    <div className="pipeline-page">
 
-    {procesos.map((p, index) => (
 
-      <div key={index} className='pipeline-card'>
+      <div className="page-header">
 
-        <div className='pipeline-top'>
-          <h3>{p.nombre}</h3>
-          <span className='pipeline-status'>{p.estado}</span>
-        </div>
+        <h1>
+          Pipeline
+        </h1>
 
-        <div className='progress-bar'>
-          <div
-            className='progress-fill'
-            style={{ width: `${p.progreso}%` }}
-          ></div>
-        </div>
-
-        <p>{p.progreso}% completado</p>
+        <p>
+          Seguimiento del procesamiento automático de información.
+        </p>
 
       </div>
 
-    ))}
-
-  </div>
-
-</div>
 
 
-);
+      <div className="dashboard-grid">
+
+
+        <div className="kpi-card">
+
+          <div>
+
+            <p>Procesos totales</p>
+
+            <h2>24</h2>
+
+            <span>Este mes</span>
+
+          </div>
+
+        </div>
+
+
+
+        <div className="kpi-card">
+
+          <div>
+
+            <p>Procesos activos</p>
+
+            <h2>8</h2>
+
+            <span>Ejecutándose</span>
+
+          </div>
+
+        </div>
+
+
+
+        <div className="kpi-card">
+
+          <div>
+
+            <p>Completados</p>
+
+            <h2>16</h2>
+
+            <span>Correctamente</span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+      <div className="panel">
+
+
+        <div className="panel-header">
+
+          <h3>
+            Estado de procesos
+          </h3>
+
+        </div>
+
+
+
+        <table className="gmail-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Proceso</th>
+
+              <th>Estado</th>
+
+              <th>Fecha</th>
+
+              <th>Avance</th>
+
+            </tr>
+
+          </thead>
+
+
+
+          <tbody>
+
+            {
+              procesos.map((proceso, index)=>(
+
+                <tr key={index}>
+
+                  <td>
+                    {proceso.nombre}
+                  </td>
+
+                  <td>
+                    {proceso.estado}
+                  </td>
+
+                  <td>
+                    {proceso.fecha}
+                  </td>
+
+                  <td>
+                    {proceso.progreso}
+                  </td>
+
+                </tr>
+
+              ))
+            }
+
+
+          </tbody>
+
+
+        </table>
+
+
+      </div>
+
+
+    </div>
+
+  );
+
 }
+
 
 export default Pipeline;

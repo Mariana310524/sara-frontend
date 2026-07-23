@@ -110,7 +110,7 @@ return ( <div className='dashboard-page'>
           <Line
             type='monotone'
             dataKey='correos'
-            stroke='#7c3aed'
+            stroke='#D4AF37'
             strokeWidth={3}
             dot={{ r: 5 }}
           />

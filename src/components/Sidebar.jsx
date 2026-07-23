@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom';
+
 import {
   FiHome,
   FiMail,
@@ -10,7 +12,12 @@ import {
   FiSettings
 } from 'react-icons/fi';
 
+
 function Sidebar() {
+
+
+  const [width, setWidth] = useState(260);
+
 
   const menu = [
     { path: '/', label: 'Dashboard', icon: <FiHome /> },
@@ -22,65 +29,181 @@ function Sidebar() {
     { path: '/settings', label: 'Configuración', icon: <FiSettings /> },
   ];
 
+
+
+  const moverSidebar = (e) => {
+
+    const nuevoAncho = e.clientX;
+
+
+    if(nuevoAncho >= 200 && nuevoAncho <= 400){
+
+      setWidth(nuevoAncho);
+
+    }
+
+  };
+
+
+
+  const detenerResize = () => {
+
+    document.removeEventListener(
+      'mousemove',
+      moverSidebar
+    );
+
+  };
+
+
+
+  const iniciarResize = () => {
+
+    document.addEventListener(
+      'mousemove',
+      moverSidebar
+    );
+
+
+    document.addEventListener(
+      'mouseup',
+      detenerResize
+    );
+
+  };
+
+
+
   return (
-    <aside className='sidebar'>
+
+    <aside 
+      className='sidebar'
+      style={{width:`${width}px`}}
+    >
+
 
       <div className='sidebar-brand'>
+
 
         <div className='brand-logo'>
           S
         </div>
 
+
         <div className='brand-text'>
+
           <h2>SARA</h2>
-          <span>Analytics Platform</span>
+
+          <span>
+            Analytics Platform
+          </span>
+
         </div>
 
+
       </div>
+
+
 
       <nav className='sidebar-nav'>
 
-        {menu.map((item) => (
+
+        {menu.map((item)=>(
+
 
           <NavLink
+
             key={item.path}
+
             to={item.path}
-            className={({ isActive }) =>
-              isActive ? 'nav-item active' : 'nav-item'
+
+            className={({isActive}) =>
+              isActive 
+              ? 'nav-item active' 
+              : 'nav-item'
             }
+
           >
 
+
             <span className='nav-icon'>
+
               {item.icon}
+
             </span>
 
+
+
             <span className='nav-label'>
+
               {item.label}
+
             </span>
+
+
 
           </NavLink>
 
+
         ))}
+
 
       </nav>
 
+
+
+
+
       <div className='sidebar-footer'>
+
 
         <div className='footer-card'>
 
+
           <div className='footer-status'></div>
 
+
+
           <div>
-            <p>Servidor</p>
-            <span>En línea</span>
+
+            <p>
+              Servidor
+            </p>
+
+            <span>
+              En línea
+            </span>
+
+
           </div>
+
 
         </div>
 
+
       </div>
 
+
+
+
+      {/* MANIJA PARA CAMBIAR TAMAÑO */}
+
+      <div
+
+        className="resize-handle"
+
+        onMouseDown={iniciarResize}
+
+      />
+
+
+
     </aside>
+
+
   );
+
 }
+
 
 export default Sidebar;

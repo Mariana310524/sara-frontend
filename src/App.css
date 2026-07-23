@@ -24,11 +24,8 @@ body{
 
 /* SIDEBAR */
 .sidebar{
-  width:260px;
-  min-width:260px;
-  background:#111111;
-  color:#D4AF37;
-  padding:30px 24px;
+  background:#E8DCCF;
+  color:#4B3621;
 }
 
 .logo{
@@ -617,118 +614,89 @@ body{
 
 }
 /* =========================
-   DASHBOARD ESTILO PREMIUM
+   HISTORIAL BONITO
 ========================= */
 
-.dashboard-page{
-    padding:25px 30px;
+.history-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:28px;
 }
 
-
-.dashboard-page .page-header h1{
-    color:#D4AF37;
+.history-card{
+    background:white;
+    border-radius:22px;
+    padding:22px;
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transition:.25s ease;
+    border:1px solid #f3f4f6;
 }
 
+.history-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(0,0,0,.08);
+}
 
-.dashboard-page .page-header p{
+.history-icon{
+    width:56px;
+    height:56px;
+    border-radius:16px;
+    background:#f5f3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    flex-shrink:0;
+}
+
+.history-content{
+    flex:1;
+}
+
+.history-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-bottom:8px;
+}
+
+.history-top h3{
+    margin:0;
+    font-size:17px;
+    color:#111827;
+    font-weight:700;
+}
+
+.history-content p{
+    margin:0;
     color:#6b7280;
+    font-size:14px;
 }
 
-
-/* TARJETAS KPI */
-
-.dashboard-page .kpi-card{
-
-    background:#111111;
-
-    border:1px solid #2b2b2b;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
+.history-status{
+    background:#dcfce7;
+    color:#166534;
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    white-space:nowrap;
 }
 
+@media(max-width:768px){
 
-.dashboard-page .kpi-icon{
+    .history-card{
+        flex-direction:column;
+    }
 
-    background:#D4AF37;
-
-    color:#111111;
-
-}
-
-
-.dashboard-page .kpi-card p{
-
-    color:#d1d5db;
-
-}
-
-
-.dashboard-page .kpi-card h2{
-
-    color:#D4AF37;
-
-}
-
-
-/* PANELES */
-
-.dashboard-page .panel{
-
-    background:#111111;
-
-    border:1px solid #2b2b2b;
-
-}
-
-
-.dashboard-page .panel-header h3{
-
-    color:#D4AF37;
-
-}
-
-
-/* ACTIVIDAD */
-
-.dashboard-page .activity-item p{
-
-    color:white;
-
-}
-
-
-.dashboard-page .activity-item span{
-
-    color:#9ca3af;
-
-}
-
-
-/* ESTADO */
-
-.dashboard-page .status-row span:first-child{
-
-    color:white;
-
-}
-
-
-.dashboard-page .status-ok{
-
-    background:#D4AF37;
-
-    color:#111111;
-
-}
-
-
-/* GRAFICA */
-
-.dashboard-page .recharts-text{
-
-    fill:#D4AF37;
+    .history-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
 
 }

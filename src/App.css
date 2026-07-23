@@ -69,7 +69,7 @@ body{
 
 /* DASHBOARD */
 .dashboard{
-  padding:40px 50px;
+  padding:25px 30px;
 }
 
 .cards{
@@ -101,7 +101,7 @@ body{
 .gmail-page{
   width:100%;
   min-height:100vh;
-  padding:40px 50px;
+  padding:25px 30px;
 }
 
 .gmail-header{
@@ -110,7 +110,7 @@ body{
 }
 
 .gmail-page h1{
-  font-size:64px;
+  font-size:36px;
   line-height:1.1;
   margin-bottom:16px;
   color:#111827;
@@ -146,8 +146,8 @@ body{
 .gmail-card{
   width:100%;
   background:white;
-  border-radius:24px;
-  padding:32px;
+  border-radius:20px;
+  padding:20px;
   margin-bottom:24px;
   box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
@@ -351,8 +351,7 @@ body{
 
 
 .stat-card h2{
-    margin:5px 0 0;
-    font-size:28px;
+    font-size:24px;
 }
 .mail-index{
     width:32px;
